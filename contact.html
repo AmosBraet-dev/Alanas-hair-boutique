@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alana's Hair Boutique - Contact</title>
+    <link class="js-favicon" rel="icon" href="/images/favicon-alana.png" />
+    <link rel="stylesheet" href="/src/css/index.css" />
+    <script type="module" src="/src/js/index.js"></script>
+</head>
+<body class="bg-brand-rose-solid">
+    <load src="src/parts/header.html" />
+
+    <load src="src/parts/contact-form.html" />
+
+    <load src="src/parts/location-contact.html" />
+    
+    <section class="cta-section">
+        <load src="src/parts/cta-section-cream.html" />
+    </section>
+
+    <load src="src/parts/footer.html" />
+<script src="https://web3forms.com/client/script.js" async defer></script>
+<script>
+const form = document.getElementById('contactForm');
+const feedbackBox = document.getElementById('formFeedback');
+const submitBtnText = document.getElementById('submitBtnText');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Voorkom dat de browser de pagina hard ververscht
+    
+    // Visuele feedback: de knop geeft aan dat hij laadt
+    submitBtnText.textContent = "Momenteel verzenden...";
+    feedbackBox.classList.add('hidden');
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    // Stuur de data stilletjes op de achtergrond naar Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let res = await response.json();
+        if (response.status === 200) {
+            window.location.href = "/redirect";
+        } else {
+            submitBtnText.textContent = "Verzend bericht";
+            feedbackBox.textContent = "Gelieve de herkenningstest (captcha) te voltooien.";
+            feedbackBox.classList.remove('hidden');
+        }
+    })
+    .catch(error => {
+        submitBtnText.textContent = "Verzend bericht";
+        feedbackBox.textContent = "Er ging iets mis. Controleer uw verbinding.";
+        feedbackBox.classList.remove('hidden');
+    });
+});
+</script>
+</body>
+</html>

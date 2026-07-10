@@ -1,0 +1,100 @@
+<section data-header-bg="bg-brand-rose-solid" class="relative w-full bg-brand-cream py-24 lg:py-36 overflow-hidden border-t border-brand-bronze/10">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
+            
+            <!-- Linkse kolom: Contactgegevens -->
+            <div class="lg:col-span-5 text-center lg:text-left">
+                <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.4em] text-brand-bronze/70 mb-4 block">
+                    Contact & Locatie
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-wide text-brand-dark leading-[1.15] mb-8">
+                    Vragen of persoonlijk <br />
+                    <span class="font-serif italic font-normal text-brand-bronze block mt-2 text-4xl sm:text-5xl md:text-6xl">advies nodig?</span>
+                </h2>
+                <div class="w-12 h-[1px] bg-brand-bronze/40 mb-8 mx-auto lg:mx-0"></div>
+                <div class="space-y-6 text-sm md:text-base font-light text-brand-dark/80 tracking-wide">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-bronze block font-medium mb-1">Adres boutique</span>
+                        <p class="not-italic">Hageweg 51,<br />8490 Jabbeke</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-bronze block font-medium mb-1">Telefoonnummer</span>
+                        <a href="tel:+32471234567" class="hover:text-brand-bronze transition-colors no-underline">+32 471 23 45 67</a>
+                    </div>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-bronze block font-medium mb-1">E-mailadres</span>
+                        <a href="mailto:info@alanashairboutique.be" class="hover:text-brand-bronze transition-colors no-underline">info@alanashairboutique.be</a>
+                    </div>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-bronze block font-medium mb-1">Openingsuren</span>
+                        <p>Maandag & Dinsdag: Op afspraak</p>
+                        <p class="text-brand-dark/50 text-xs mt-1">Via de online agenda boekt u eenvoudig uw gewenste tijdslot.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden lg:block lg:col-span-1"></div>
+
+            <!-- Rechtse kolom: Contactformulier -->
+            <div class="lg:col-span-6 bg-white/40 backdrop-blur-sm border border-brand-bronze/10 p-8 sm:p-12 shadow-sm">
+                
+                <!-- Let op: action is hier verwijderd, we regelen het met de id="contactForm" -->
+                <form id="contactForm" method="POST" class="space-y-8">
+                    <input type="hidden" name="access_key" value="60561371-5255-432a-85f4-d55b029fed98" />  
+                    <input type="hidden" name="subject" value="Nieuw bericht via Alana's Hair Boutique" />  
+                    
+                    <!-- Naam veld -->
+                    <div class="relative z-0 w-full group">
+                        <input type="text" name="name" id="name" required 
+                            class="block py-2.5 px-0 w-full text-sm text-brand-dark bg-transparent border-0 border-b border-brand-bronze/30 appearance-none focus:outline-none focus:ring-0 peer placeholder-transparent transition-colors duration-300 focus:border-brand-dark valid:border-brand-bronze" 
+                            placeholder="Naam" />
+                        <label for="name" class="absolute text-xs uppercase tracking-widest text-brand-dark/40 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] transition-all peer-focus:left-0 peer-focus:text-brand-dark peer-focus:scale-75 peer-focus:-translate-y-6 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-valid:text-brand-bronze peer-valid:scale-75 peer-valid:-translate-y-6">
+                            Uw naam <span class="text-brand-bronze/80 ml-0.5">*</span>
+                        </label>
+                    </div>
+
+                    <!-- E-mail veld -->
+                    <div class="relative z-0 w-full group">
+                        <input type="email" name="email" id="email" required 
+                            class="block py-2.5 px-0 w-full text-sm text-brand-dark bg-transparent border-0 border-b border-brand-bronze/30 appearance-none focus:outline-none focus:ring-0 peer placeholder-transparent transition-colors duration-300 focus:border-brand-dark valid:border-brand-bronze" 
+                            placeholder="E-mailadres" />
+                        <label for="email" class="absolute text-xs uppercase tracking-widest text-brand-dark/40 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] transition-all peer-focus:left-0 peer-focus:text-brand-dark peer-focus:scale-75 peer-focus:-translate-y-6 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-valid:text-brand-bronze peer-valid:scale-75 peer-valid:-translate-y-6">
+                            Uw e-mailadres <span class="text-brand-bronze/80 ml-0.5">*</span>
+                        </label>
+                    </div>
+
+                    <!-- Bericht veld -->
+                    <div class="relative z-0 w-full group">
+                        <textarea name="message" id="message" rows="4" required 
+                            class="block py-2.5 px-0 w-full text-sm text-brand-dark bg-transparent border-0 border-b border-brand-bronze/30 appearance-none focus:outline-none focus:ring-0 peer placeholder-transparent resize-none transition-colors duration-300 focus:border-brand-dark valid:border-brand-bronze" 
+                            placeholder="Bericht"></textarea>
+                        <label for="message" class="absolute text-xs uppercase tracking-widest text-brand-dark/40 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] transition-all peer-focus:left-0 peer-focus:text-brand-dark peer-focus:scale-75 peer-focus:-translate-y-6 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-valid:text-brand-bronze peer-valid:scale-75 peer-valid:-translate-y-6">
+                            Hoe kan ik u helpen? <span class="text-brand-bronze/80 ml-0.5">*</span>
+                        </label>
+                    </div>
+
+                    <!-- h-Captcha -->
+                    <div class="flex justify-center lg:justify-start pt-2">
+                        <div class="h-captcha" data-captcha="true" data-lang="nl" data-size="normal"></div>
+                    </div>
+
+                    <!-- Redactionele Foutmelding Box (Onzichtbaar tot nodig) -->
+                    <div id="formFeedback" class="hidden text-center lg:text-left text-xs uppercase tracking-widest text-red-700/80 font-medium bg-red-50/50 border border-red-200/40 p-3 transition-all duration-300">
+                        <!-- Hier komt de tekst dynamisch in te staan -->
+                    </div>
+
+                    <!-- Luxe Knop -->
+                    <div class="pt-4 text-center lg:text-left">
+                        <button type="submit" id="submitBtn" class="custom-fill-btn relative w-full sm:w-auto px-12 py-4 text-xs font-bold uppercase tracking-[0.25em] border-2 border-brand-bronze/60 text-brand-bronze inline-block overflow-hidden transition-all duration-300 cursor-pointer text-center">
+                            <span class="btn-bg"></span>
+                            <span class="btn-text" id="submitBtnText">Verzend bericht</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<!-- CTA STROOK -->
+<section data-header-bg="bg-brand-rose-solid" class="w-full py-20 mb-24 bg-brand-cream border-t border-b border-brand-bronze">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 ">
+        
+        <div class="text-center md:text-left">
+            <h3 id="cta-title" class="font-serif italic text-2xl lg:text-4xl leading-tight text-brand-bronze"></h3>
+        </div>
+
+        <div class="flex items-center">
+            <a href="#" class="custom-fill-btn relative px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] border-2 border-brand-bronze/60 text-brand-bronze no-underline inline-block overflow-hidden transition-all duration-300">
+                <span class="btn-bg"></span>
+                <span class="btn-text">Boek Nu</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .cta-dynamic-title::after {
+        content: var(--cta-text, "Ervaar nak in de boutique.");
+    }
+</style>
