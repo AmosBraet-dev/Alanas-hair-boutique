@@ -1,5 +1,11 @@
 import "/src/js/custom-cursor.js";
 import "/src/js/bg-flowers.js";
+import Alpine from 'alpinejs'
+ 
+window.Alpine = Alpine
+ 
+Alpine.start()
+
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
     const logoBg = document.getElementById('logo-bg');

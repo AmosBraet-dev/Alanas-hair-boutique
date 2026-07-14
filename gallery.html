@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alana's Hair Boutique - Home</title>
+    <link class="js-favicon" rel="icon" href="/images/favicon-alana.png" />
+    <link rel="stylesheet" href="/src/css/index.css" />
+    <script type="module" src="/src/js/index.js"></script>
+</head>
+<body class="flex flex-col font-sans text-brand-dark z-0 m-0">
+    <load src="src/parts/header.html" />
+    
+    <main class="grow bg-brand-cream">
+        <section class="relative bg-brand-cream pt-40 pb-24 overflow-hidden"
+         x-data="{ shown: false }"
+         x-init="setTimeout(() => shown = true, 100)">
+
+    <!-- Decoratieve achtergrondtekst -->
+    <div class="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
+        <span class="font-serif text-[16vw] leading-none text-brand-dark/[0.025] whitespace-nowrap">Alana's</span>
+    </div>
+
+    <div class="relative w-full max-w-[1000px] mx-auto px-6 text-center">
+
+        <!-- Eyebrow -->
+        <div class="flex items-center justify-center gap-4 mb-8
+                    transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
+             :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
+            <span class="w-8 h-px bg-brand-bronze"></span>
+            <span class="text-brand-bronze uppercase tracking-[0.3em] text-xs font-light">Alana's Hair Boutique</span>
+            <span class="w-8 h-px bg-brand-bronze"></span>
+        </div>
+
+        <!-- Titel -->
+        <h1 class="font-serif text-4xl md:text-6xl text-brand-dark leading-tight mb-8
+                   transition-all duration-1000 delay-150 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
+            Waar vakmanschap<br class="hidden md:block"> en verfijning samenkomen
+        </h1>
+
+        <!-- Intro-tekst -->
+        <p class="text-brand-dark/60 text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto mb-12
+                  transition-all duration-1000 delay-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+           :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
+            Een intieme salon in het hart van de stad, waar elk detail — van het licht tot de laatste knip —
+            met zorg is doordacht. Ontdek de sfeer voordat u plaatsneemt.
+        </p>
+
+        <!-- Scroll-indicator -->
+        <div class="flex flex-col items-center gap-3 mt-8
+                    transition-all duration-1000 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+             :class="shown ? 'opacity-100' : 'opacity-0'">
+            <span class="text-brand-dark/40 uppercase tracking-[0.25em] text-[10px] font-light">Bekijk de salon</span>
+            <div class="w-px h-12 bg-gradient-to-b from-brand-bronze/60 to-transparent animate-pulse"></div>
+        </div>
+    </div>
+</section>
+        <load src="src/parts/carrousel.html" />
+    </main>
+    
+    <load src="src/parts/footer.html" />
+</body>
+</html>

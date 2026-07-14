@@ -1,0 +1,127 @@
+<section class="relative bg-brand-cream py-32 overflow-hidden"
+         x-data="{
+            activeSlide: 0,
+            offset: 0,
+            hoverX: 0,
+            hoverY: 0,
+            trackHeight: 440,
+            gap: 40,
+            slides: [
+                { src: 'main-salon.jpg', ratio: '16/9', caption: 'Hoofdsalon' },
+                { src: 'gallery-pic-3.jpg', ratio: '16/9', caption: 'Detail' },
+                { src: 'gallery-pic-4.jpg', ratio: '16/9', caption: 'NAK producten' },
+                { src: 'gallery-pic-5.jpg', ratio: '9/16', caption: 'Inkom' },
+                { src: 'gallery-pic-7.jpg', ratio: '9/16', caption: 'Wastafel' }
+            ],
+            slideWidth(ratio) {
+                const [w, h] = ratio.split('/').map(Number);
+                return this.trackHeight * (w / h);
+            },
+            centerActive() {
+                const viewport = this.$refs.viewport;
+                if (!viewport) return;
+
+                // Cumulatieve linkerpositie van elke slide berekenen, puur wiskundig
+                let left = 0;
+                for (let i = 0; i < this.activeSlide; i++) {
+                    left += this.slideWidth(this.slides[i].ratio) + this.gap;
+                }
+                const activeWidth = this.slideWidth(this.slides[this.activeSlide].ratio);
+                const activeCenter = left + activeWidth / 2;
+
+                const viewportCenter = viewport.clientWidth / 2;
+                this.offset = viewportCenter - activeCenter;
+            },
+            setActive(index) {
+                this.activeSlide = index;
+                this.centerActive();
+            },
+            trackHover(e, el) {
+                const r = el.getBoundingClientRect();
+                this.hoverX = ((e.clientX - r.left) / r.width - 0.5) * 2;
+                this.hoverY = ((e.clientY - r.top) / r.height - 0.5) * 2;
+            }
+         }"
+         x-init="centerActive(); window.addEventListener('resize', () => centerActive())">
+
+    <div class="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
+        <span class="font-serif text-[28vw] leading-none text-brand-dark/[0.03]"
+              x-text="String(activeSlide + 1).padStart(2, '0')"></span>
+    </div>
+
+    <div class="relative w-full max-w-[1400px] mx-auto">
+
+        <div class="flex items-end justify-between px-6 mb-12">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark tracking-tight">Galerij</h2>
+            <div class="flex items-baseline gap-1 font-serif text-brand-dark/40 text-sm tracking-widest">
+                <span class="text-brand-bronze text-base" x-text="String(activeSlide + 1).padStart(2, '0')"></span>
+                <span>/</span>
+                <span x-text="String(slides.length).padStart(2, '0')"></span>
+            </div>
+        </div>
+
+        <!-- Viewport: geen padding meer hier, dat gaf de meting extra ambiguïteit -->
+        <div class="relative h-[440px] overflow-hidden" x-ref="viewport">
+            <div class="flex items-center h-full"
+                 :style="`gap: ${gap}px; transform: translateX(${offset}px); transition: transform 900ms cubic-bezier(0.16,1,0.3,1)`"
+                 x-ref="track">
+
+                <template x-for="(slide, index) in slides" :key="index">
+                    <div class="group relative flex-none h-full cursor-pointer overflow-hidden rounded-sm"
+                         :style="`aspect-ratio: ${slide.ratio};
+                                  perspective: 1200px;
+                                  transition: all 900ms cubic-bezier(0.16,1,0.3,1);
+                                  transform: ${activeSlide === index
+                                    ? `rotateY(${hoverX * 4}deg) rotateX(${-hoverY * 4}deg) scale(1)`
+                                    : `scale(0.8)`};
+                                  box-shadow: ${activeSlide === index
+                                    ? '0 40px 80px -20px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.03)'
+                                    : '0 10px 20px -10px rgba(0,0,0,0.15)'};`"
+                         :class="activeSlide === index ? 'opacity-100' : 'opacity-30 grayscale hover:opacity-55 hover:grayscale-0'"
+                         @click="setActive(index)"
+                         @mousemove="activeSlide === index && trackHover($event, $el)"
+                         @mouseleave="hoverX = 0; hoverY = 0">
+
+                        <img :src="`/images/${slide.src}`"
+                             class="w-full h-full object-cover transition-transform duration-[6000ms] ease-out"
+                             :class="activeSlide === index ? 'scale-[1.08]' : 'scale-100'"
+                             @load="centerActive()">
+
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent
+                                    opacity-0 transition-opacity duration-700"
+                             :class="activeSlide === index && 'opacity-100'"></div>
+
+                        <div class="pointer-events-none absolute bottom-0 left-0 right-0 p-6
+                                    translate-y-3 opacity-0 transition-all duration-700 delay-100"
+                             :class="activeSlide === index && 'translate-y-0 opacity-100'">
+                            <span class="text-white/90 text-xs uppercase tracking-[0.25em] font-light" x-text="slide.caption"></span>
+                        </div>
+
+                        <div class="pointer-events-none absolute inset-0 rounded-sm ring-1 ring-inset ring-white/10"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-10 mt-16 px-6">
+            <button @click="setActive(Math.max(0, activeSlide - 1))"
+                    class="group flex items-center gap-3 text-brand-dark uppercase tracking-[0.25em] text-[11px] font-light
+                           hover:text-brand-bronze transition-colors duration-500">
+                <span class="w-6 h-px bg-current transition-all duration-500 group-hover:w-10"></span>
+                Vorige
+            </button>
+
+            <div class="relative w-40 h-px bg-brand-bronze/15">
+                <div class="absolute top-0 left-0 h-px bg-brand-bronze transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                     :style="`width: ${((activeSlide + 1) / slides.length) * 100}%`"></div>
+            </div>
+
+            <button @click="setActive(Math.min(slides.length - 1, activeSlide + 1))"
+                    class="group flex items-center gap-3 text-brand-dark uppercase tracking-[0.25em] text-[11px] font-light
+                           hover:text-brand-bronze transition-colors duration-500">
+                Volgende
+                <span class="w-6 h-px bg-current transition-all duration-500 group-hover:w-10"></span>
+            </button>
+        </div>
+    </div>
+</section>

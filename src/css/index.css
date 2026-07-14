@@ -126,3 +126,6 @@ textarea:-webkit-autofill:focus {
     padding-top: 1.25rem; /* Net iets meer ademruimte tijdens het scrollen */
     padding-bottom: 1.25rem;
 }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
