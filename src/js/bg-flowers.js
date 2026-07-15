@@ -1,4 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initBgFlowers = () => {
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!supportsHover || prefersReducedMotion || window.innerWidth < 768) {
+        return;
+    }
+
     const config = {
         defaultImage: '/images/bg-flower.png',
         // Beschikbare assets voor de dynamische verlenging
@@ -144,4 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.body.appendChild(flowerContainer);
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBgFlowers, { once: true });
+} else {
+    initBgFlowers();
+}

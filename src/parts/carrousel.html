@@ -83,6 +83,7 @@
                          @mouseleave="hoverX = 0; hoverY = 0">
 
                         <img :src="`/images/${slide.src}`"
+                             loading="lazy" decoding="async"
                              class="w-full h-full object-cover transition-transform duration-[6000ms] ease-out"
                              :class="activeSlide === index ? 'scale-[1.08]' : 'scale-100'"
                              @load="centerActive()">

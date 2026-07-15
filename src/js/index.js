@@ -1,10 +1,20 @@
-import "/src/js/custom-cursor.js";
-import "/src/js/bg-flowers.js";
-import Alpine from 'alpinejs'
- 
-window.Alpine = Alpine
- 
-Alpine.start()
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasAlpineBindings = document.querySelector('[x-data], [x-show], [x-bind], [x-for]') !== null;
+
+if (!prefersReducedMotion) {
+    import('/src/js/custom-cursor.js');
+}
+
+if (!prefersReducedMotion && window.innerWidth >= 768) {
+    import('/src/js/bg-flowers.js');
+}
+
+if (hasAlpineBindings) {
+    import('alpinejs').then(({ default: Alpine }) => {
+        window.Alpine = Alpine;
+        Alpine.start();
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');

@@ -1,8 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initCustomCursor = () => {
+  const body = document.body;
+  if (!body) return;
+
   // 1. Maak de custom cursor div aan en voeg hem toe aan de body
   const cursor = document.createElement('div');
   cursor.classList.add('custom-cursor');
-  document.body.appendChild(cursor);
+  body.appendChild(cursor);
 
   // 2. Laat de schaar de muispositie volgen
   document.addEventListener('mousemove', (e) => {
@@ -27,4 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('mouseenter', () => {
     cursor.style.opacity = '1';
   });
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCustomCursor, { once: true });
+} else {
+  initCustomCursor();
+}
