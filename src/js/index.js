@@ -56,20 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('nav a').forEach(link => {
     const linkPath = link.getAttribute('href');
-    const underline = link.querySelector('span');
+    const underline = link.querySelector('span'); // Kan null zijn
 
     if (currentPath === linkPath || (currentPath === '/' && linkPath === '/index.html')) {
-      // Dit is de actieve link
       link.classList.remove('text-brand-bronze/60');
       link.classList.add('text-brand-bronze');
-      underline.classList.remove('w-0', 'group-hover:w-full');
-      underline.classList.add('w-full');
+      
+      // Controleer of underline bestaat voordat je classList gebruikt
+      if (underline) {
+        underline.classList.remove('w-0', 'group-hover:w-full');
+        underline.classList.add('w-full');
+      }
     } else {
-      // Dit zijn de inactieve links
       link.classList.remove('text-brand-bronze');
       link.classList.add('text-brand-bronze/60');
-      underline.classList.remove('w-full');
-      underline.classList.add('w-0', 'group-hover:w-full');
+      
+      // Controleer of underline bestaat voordat je classList gebruikt
+      if (underline) {
+        underline.classList.remove('w-full');
+        underline.classList.add('w-0', 'group-hover:w-full');
+      }
     }
   });
 });
@@ -96,6 +102,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Zoek alle elementen met de klasse 'editorial-fade'
     const fadeElements = document.querySelectorAll('.editorial-fade');
     fadeElements.forEach(el => scrollObserver.observe(el));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Enkel uitvoeren op mobiel (kleiner dan 768px)
+    if (window.innerWidth < 768) {
+        const observerOptions = { threshold: 0.35 };
+
+        const hoverObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    
+                    // Voeg de highlight klasse toe voor het effect
+                    el.classList.add('is-mobile-hover');
+                    
+                    // Verwijder het effect na 3 seconden
+                    setTimeout(() => {
+                        el.classList.remove('is-mobile-hover');
+                    }, 3000);
+
+                    observer.unobserve(el);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.editorial-fade').forEach(el => hoverObserver.observe(el));
+    }
 });
 
 document.addEventListener('DOMContentLoaded', () => {

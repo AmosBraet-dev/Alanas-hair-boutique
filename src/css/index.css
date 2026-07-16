@@ -118,7 +118,6 @@ textarea:-webkit-autofill:focus {
 
 /* Styling die PAS actief wordt als de menubalk vastplakt aan je header */
 #sticky-services-nav.is-pinned {
-    background-color: rgba(24bf, 244, 238, 0.9); /* Je brand-cream met 90% opacity */
     backdrop-filter: blur(12px); /* Luxe matglas effect */
     -webkit-backdrop-filter: blur(12px); /* Safari support */
     z-index: 30; /* Schiet omhoog over de prijzen heen */
@@ -127,5 +126,46 @@ textarea:-webkit-autofill:focus {
     padding-bottom: 1.25rem;
 }
 
+
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (max-width: 767px) {
+    /* 1. Zorg dat de basis-div expliciet overgangen heeft voor de eigenschappen die veranderen */
+    .feature-card, .feature-step {
+        transition: background-color 2s ease, border-color 2s ease, transform 2s ease !important;
+    }
+
+    /* 2. De actieve staat */
+    .is-mobile-hover { 
+        border-color: rgba(139, 115, 85, 0.4) !important; 
+        background-color: #fdfaf6 !important; 
+    }
+    .is-mobile-hover .group-hover-trigger, 
+    .is-mobile-hover .line-indicator,
+    .is-mobile-hover .divider { 
+        width: 64px !important; /* Pas dit aan naar 40px als dat beter past */
+    }
+
+    /* 3. De transitie voor de interne elementen (icoon en lijn) */
+    .feature-card .icon-circle, 
+    .feature-card .divider {
+        transition: all 2s ease !important;
+    }
+
+    .is-mobile-hover .icon-circle{ 
+        background-color: #8b7355 !important; 
+        color: #fdfaf6 !important; 
+        transform: scale(1.1) !important; 
+    }
+
+    .is-mobile-hover .step-number { 
+        transition: all 2s ease !important;
+        transform: scale(1.1) !important;
+        color: #8b7355 !important; 
+    }
+    
+    .is-mobile-hover .divider { 
+        width: 40px !important; 
+    }
+}

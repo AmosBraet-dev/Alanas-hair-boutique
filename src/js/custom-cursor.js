@@ -1,4 +1,5 @@
 const initCustomCursor = () => {
+
   const body = document.body;
   if (!body) return;
 

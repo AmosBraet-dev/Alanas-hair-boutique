@@ -1,40 +1,31 @@
-<!-- COMBINED ABOUT & NAK SECTION WITH EDITORIAL FLOW -->
-<div class="relative w-full bg-brand-cream">
+<section data-header-bg="bg-brand-rose-solid" class="relative w-full min-h-screen flex items-center justify-center bg-brand-cream overflow-hidden">
 
-    <!-- SECTIE 1: ALANA (De introductie) -->
-    <!-- SECTIE 1: ALANA (De introductie met zachte foto-overgang) -->
-<section data-header-bg="bg-brand-rose-solid" class="relative w-full min-h-screen flex items-center justify-center bg-brand-cream overflow-hidden py-12 lg:py-0">
-
-    <div class="relative w-full min-h-screen grid grid-cols-1 lg:grid-cols-12 items-stretch">
-
-        <!-- Links: Foto met vloeiende overgang -->
-        <!-- VERBETERING: De kolom is vergroot naar col-span-5 voor meer fotodetail en betere blendruimte -->
-        <div class="lg:col-span-5 relative min-h-[55vh] lg:min-h-screen w-full flex items-center justify-start order-2 lg:order-1">
-            <div class="w-full h-full lg:absolute lg:inset-0 overflow-hidden bg-brand-cream">
-                <img src="/images/about.jpg" alt="Alana - Hair Boutique" loading="lazy" decoding="async" class="w-full h-full object-cover object-center scale-100" />                
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-cream/10 to-brand-cream hidden lg:block w-[101%]"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-cream via-transparent to-transparent hidden lg:block h-[101%]"></div>
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-cream via-transparent to-brand-cream lg:hidden"></div>
-            </div>
-        </div>
-
-        <!-- Rechts: Content -->
-        <!-- VERBETERING: col-span-7 geworden om perfect aan te sluiten op de foto -->
-        <div class="lg:col-span-7 flex flex-col justify-center items-center lg:items-start px-6 sm:px-12 md:px-16 lg:pl-16 xl:pl-24 min-[2000px]:pl-48 pr-6 sm:pr-12 md:pr-16 lg:pr-16 xl:pr-24 text-center lg:text-left bg-brand-cream py-12 lg:py-8 order-1 lg:order-2  relative">
-            
-            <span class="text-[10px] sm:text-xs min-[2000px]:text-xl font-semibold uppercase tracking-[0.35em] text-brand-bronze mb-3 max-[1500px]:mb-2 min-[2000px]:mb-8 block">
+    <!-- MOBIEL: titel eerst, foto eronder met titel half erop via fade -->
+    <div class="lg:hidden w-full pt-8">
+        <div class="relative px-6 sm:px-10 text-center z-10">
+            <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-brand-bronze mb-3 block">
                 Het gezicht achter de boutique
             </span>
-            
-            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-3xl max-[1500px]:text-[2rem] xl:text-4xl min-[2000px]:text-8xl font-light tracking-wide text-brand-dark leading-[1.15] mb-4 max-[1500px]:mb-3 min-[2000px]:mb-10">
+            <h2 class="text-3xl sm:text-4xl font-light tracking-wide text-brand-dark leading-[1.15]">
                 Ontmoet <br />
-                <span class="font-serif italic font-normal text-brand-bronze text-4xl sm:text-5xl md:text-6xl lg:text-4xl max-[1500px]:text-5xl xl:text-5xl min-[2000px]:text-[11rem] block my-1 max-[1500px]:my-0.5 min-[2000px]:my-6">Alana</span>
-                <span class="font-normal uppercase text-lg sm:text-xl md:text-2xl lg:text-base max-[1500px]:text-lg xl:text-2xl min-[2000px]:text-6xl block tracking-[0.15em] mt-2 min-[2000px]:mt-6">Gepassioneerd haarstyliste</span>
+                <span class="font-serif italic font-normal text-brand-bronze text-4xl sm:text-5xl block my-1">Alana</span>
+                <span class="font-normal uppercase text-lg sm:text-xl block tracking-[0.15em] mt-2">Gepassioneerd haarstyliste</span>
             </h2>
-            
-            <div class="w-12 xl:w-16 min-[2000px]:w-40 h-[1px] min-[2000px]:h-[3px] bg-brand-bronze/40 mb-4 max-[1500px]:mb-3 min-[2000px]:mb-12"></div>
-            
-            <div class="space-y-4 min-[2000px]:space-y-8 text-sm md:text-base min-[2000px]:text-3xl font-light text-brand-dark/70 max-w-xl xl:max-w-2xl min-[2000px]:max-w-5xl leading-relaxed mb-6 max-[1500px]:mb-4 min-[2000px]:mb-16">
+        </div>
+
+        <div class="relative w-full h-[52vh] min-h-[360px] bg-brand-cream overflow-hidden">
+            <!-- De afbeelding -->
+            <img src="/images/about.jpg" 
+             alt="Alana - Hair Boutique" 
+             loading="lazy" 
+             decoding="async" 
+             class="w-full h-full object-cover object-center"
+             style="-webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent); mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);" />
+        </div>
+
+        <div class="relative px-6 sm:px-10 pt-8 text-center">
+
+            <div class="space-y-4 text-sm font-light text-brand-dark/70 max-w-xl mx-auto leading-relaxed mb-6">
                 <p>
                     Welkom bij Alana’s Hair Boutique<br>
                     Een salon waar je mag ontspannen, alles even kunt loslaten en écht tijd hebt voor jezelf.
@@ -44,38 +35,84 @@
                 </p>
             </div>
 
-            <div class="flex flex-col items-center lg:items-start gap-1 mb-8 min-[2000px]:mb-16">
-                <span class="font-serif italic text-3xl sm:text-4xl min-[2000px]:text-7xl text-brand-bronze leading-none block">Alana</span>
+        </div>
+    </div>
+    
+    <div class="hidden lg:grid relative w-full min-h-screen grid-cols-12 items-stretch">
+        <div class="col-span-5 relative min-h-screen w-full flex items-center justify-start">
+            <div class="absolute inset-0 overflow-hidden bg-brand-cream">
+                <img src="/images/about.jpg" alt="Alana - Hair Boutique" loading="lazy" decoding="async" class="w-full h-full object-cover object-center scale-100" />
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-cream/10 to-brand-cream w-[101%]"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-cream via-transparent to-transparent h-[101%]"></div>
+            </div>
+        </div>
+
+        <div class="col-span-7 flex flex-col justify-center items-start pl-16 xl:pl-24 min-[2000px]:pl-48 pr-16 xl:pr-24 text-left bg-brand-cream py-8 relative">
+            <span class="text-xs min-[2000px]:text-xl font-semibold uppercase tracking-[0.35em] text-brand-bronze mb-3 max-[1500px]:mb-2 min-[2000px]:mb-8 block">
+                Het gezicht achter de boutique
+            </span>
+
+            <h2 class="text-3xl lg:text-3xl max-[1500px]:text-[2rem] xl:text-4xl min-[2000px]:text-8xl font-light tracking-wide text-brand-dark leading-[1.15] mb-4 max-[1500px]:mb-3 min-[2000px]:mb-10">
+                Ontmoet <br />
+                <span class="font-serif italic font-normal text-brand-bronze text-4xl lg:text-4xl max-[1500px]:text-5xl xl:text-5xl min-[2000px]:text-[11rem] block my-1 max-[1500px]:my-0.5 min-[2000px]:my-6">Alana</span>
+                <span class="font-normal uppercase text-lg lg:text-base max-[1500px]:text-lg xl:text-2xl min-[2000px]:text-6xl block tracking-[0.15em] mt-2 min-[2000px]:mt-6">Gepassioneerd haarstyliste</span>
+            </h2>
+
+            <div class="w-12 xl:w-16 min-[2000px]:w-40 h-[1px] min-[2000px]:h-[3px] bg-brand-bronze/40 mb-4 max-[1500px]:mb-3 min-[2000px]:mb-12"></div>
+
+            <div class="space-y-4 min-[2000px]:space-y-8 text-base min-[2000px]:text-3xl font-light text-brand-dark/70 max-w-xl xl:max-w-2xl min-[2000px]:max-w-5xl leading-relaxed mb-6 max-[1500px]:mb-4 min-[2000px]:mb-16">
+                <p>
+                    Welkom bij Alana’s Hair Boutique<br>
+                    Een salon waar je mag ontspannen, alles even kunt loslaten en écht tijd hebt voor jezelf.
+                    Ik werk bewust op afspraak en neem de tijd voor jou en jouw haar, zodat ik de kwaliteit van mijn werk kan garanderen.
+                    Iedereen heeft een eigen stijl — samen gaan we op zoek naar een look die bij jou past en waarin jij je mooi en zelfzeker voelt. <br><br>
+                    Hopelijk tot snel!
+                </p>
+            </div>
+
+            <div class="flex flex-col items-start gap-1 mb-8 min-[2000px]:mb-16">
+                <span class="font-serif italic text-3xl min-[2000px]:text-7xl text-brand-bronze leading-none block">Alana</span>
                 <span class="text-[10px] min-[2000px]:text-lg uppercase tracking-widest text-brand-dark/40 font-medium">Oprichter — Alana's Hair Boutique</span>
             </div>
 
-            <a href="/about.html" class="custom-fill-btn relative px-10 py-3.5 max-[1500px]:px-8 max-[1500px]:py-3 xl:px-12 xl:py-4 min-[2000px]:px-28 min-[2000px]:py-8 text-xs md:text-sm min-[2000px]:text-2xl font-bold uppercase tracking-[0.25em] border-2 min-[2000px]:border-4 border-brand-bronze/50 text-brand-bronze no-underline inline-block overflow-hidden transition-all duration-300 hover:border-brand-bronze">
+            <a href="/about.html" class="custom-fill-btn relative px-10 py-3.5 max-[1500px]:px-8 max-[1500px]:py-3 xl:px-12 xl:py-4 min-[2000px]:px-28 min-[2000px]:py-8 text-sm min-[2000px]:text-2xl font-bold uppercase tracking-[0.25em] border-2 min-[2000px]:border-4 border-brand-bronze/50 text-brand-bronze no-underline inline-block overflow-hidden transition-all duration-300 hover:border-brand-bronze">
                 <span class="btn-bg"></span>
                 <span class="btn-text">Boek Nu</span>
             </a>
         </div>
-
     </div>
+
 </section>
+<div class="flex md:hidden justify-center mt-12">
+    <div class="w-16 h-[1px] bg-brand-bronze/30"></div>
+</div>
 <section class="relative w-full py-24 lg:pb-40 overflow-hidden">
     <div class="max-w-8xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-16 items-center">
-            
-            <!-- Links: Tekst & Filosofie (Neemt 7 kolommen in voor ademruimte) -->
-            <div class="lg:col-span-7 xl:pr-12 text-center lg:text-left order-2 lg:order-1">
+
+        <!-- MOBIEL: titel eerst, dan foto, dan tekst -->
+        <div class="lg:hidden">
+            <div class="text-center mb-10">
                 <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.4em] text-brand-bronze/70 mb-4 block">
                     Exclusieve Haircare Partnership
                 </span>
-                
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-wide text-brand-dark leading-[1.15] mb-6">
+
+                <h2 class="text-3xl sm:text-4xl font-light tracking-wide text-brand-dark leading-[1.15] mb-6">
                     Bewuste luxe. <br />
-                    Geïnspireerd door 
-                    <span class="font-normal uppercase text-brand-bronze block mt-2 text-4xl sm:text-5xl md:text-6xl">NAK Hair.</span>
+                    Geïnspireerd door
+                    <span class="font-normal uppercase text-brand-bronze block mt-2 text-4xl sm:text-5xl">NAK Hair.</span>
                 </h2>
-                <div class="w-12 h-[1px] bg-brand-bronze/40 mb-8 mx-auto lg:mx-0"></div>
-                
-                <div class="space-y-6 text-sm md:text-base font-light text-brand-dark/75 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+                <div class="w-12 h-[1px] bg-brand-bronze/40 mx-auto"></div>
+            </div>
+
+            <div class="flex justify-center mb-10">
+                <div class="relative w-full max-w-md aspect-[4/5] bg-brand-cream p-3 border border-brand-bronze/20 shadow-sm">
+                    <div class="absolute -top-4 -left-4 w-full h-full border border-brand-bronze/10 pointer-events-none"></div>
+                    <img src="/images/nak-flowers.jpg" alt="NAK Hair Australia - Natural Ingredients" loading="lazy" decoding="async" class="w-full h-full object-cover object-center grayscale-[15%]" />
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="space-y-6 text-sm font-light text-brand-dark/75 leading-relaxed mb-10 max-w-xl mx-auto">
                     <p class="font-medium text-brand-dark/90">
                         In de boutique streef ik naar perfectie, niet alleen in techniek, maar ook in de producten die uw haar voeden. De keuze voor NAK Hair Australia is een bewuste belofte aan uw haar.
                     </p>
@@ -83,27 +120,53 @@
                         Grounded in de ruwe, Australische natuur, combineert NAK botanische ingrediënten met wetenschappelijke innovatie. Alle formules zijn 100% vegan, vrij van sulfaten en parabenen, en verrijkt met een uniek Natural Vegan Complex van kokosolie, aloë vera en peer-extract. Dit herstelt de natuurlijke glans en integriteit van het haar op het hoogste niveau.
                     </p>
                 </div>
-                <!-- Knop die exact matcht met je 'Boek Nu' stijl -->
-                <div class="flex justify-center lg:justify-start">
+                <div class="flex justify-center">
                     <a href="/nak" class="custom-fill-btn relative px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] border-2 border-brand-bronze/60 text-brand-bronze no-underline inline-block overflow-hidden transition-all duration-300">
                         <span class="btn-bg"></span>
                         <span class="btn-text">Ontdek NAK Hair</span>
                     </a>
                 </div>
             </div>
-            <!-- Rechts: De high-end nak-flowers image (Neemt 5 kolommen in) -->
-            <!-- VERBETERING: order-1 op mobile zodat op kleine schermen de foto bóven de NAK-tekst staat, net zoals bij de Alana-sectie -->
-            <div class="lg:col-span-5 relative flex justify-center lg:justify-end order-1 lg:order-2">
-                <!-- Het kader heeft een subtiele offset border gekregen voor dat high-end magazine gevoel -->
+        </div>
+
+        <!-- DESKTOP: 100% ongewijzigd -->
+        <div class="hidden lg:grid grid-cols-12 gap-16 items-center">
+
+            <div class="col-span-7 xl:pr-12 text-left">
+                <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-bronze/70 mb-4 block">
+                    Exclusieve Haircare Partnership
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-light tracking-wide text-brand-dark leading-[1.15] mb-6">
+                    Bewuste luxe. <br />
+                    Geïnspireerd door
+                    <span class="font-normal uppercase text-brand-bronze block mt-2 text-4xl md:text-6xl">NAK Hair.</span>
+                </h2>
+                <div class="w-12 h-[1px] bg-brand-bronze/40 mb-8"></div>
+
+                <div class="space-y-6 text-base font-light text-brand-dark/75 leading-relaxed mb-10 max-w-xl">
+                    <p class="font-medium text-brand-dark/90">
+                        In de boutique streef ik naar perfectie, niet alleen in techniek, maar ook in de producten die uw haar voeden. De keuze voor NAK Hair Australia is een bewuste belofte aan uw haar.
+                    </p>
+                    <p>
+                        Grounded in de ruwe, Australische natuur, combineert NAK botanische ingrediënten met wetenschappelijke innovatie. Alle formules zijn 100% vegan, vrij van sulfaten en parabenen, en verrijkt met een uniek Natural Vegan Complex van kokosolie, aloë vera en peer-extract. Dit herstelt de natuurlijke glans en integriteit van het haar op het hoogste niveau.
+                    </p>
+                </div>
+                <div class="flex justify-start">
+                    <a href="/nak" class="custom-fill-btn relative px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] border-2 border-brand-bronze/60 text-brand-bronze no-underline inline-block overflow-hidden transition-all duration-300">
+                        <span class="btn-bg"></span>
+                        <span class="btn-text">Ontdek NAK Hair</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-span-5 relative flex justify-end">
                 <div class="relative w-full max-w-md aspect-[4/5] bg-brand-cream p-3 border border-brand-bronze/20 shadow-sm">
-                    <!-- Extra abstracte design-lijn achter de foto -->
                     <div class="absolute -top-4 -left-4 w-full h-full border border-brand-bronze/10 pointer-events-none"></div>
-                    
                     <img src="/images/nak-flowers.jpg" alt="NAK Hair Australia - Natural Ingredients" loading="lazy" decoding="async" class="w-full h-full object-cover object-center grayscale-[15%] hover:grayscale-0 transition-all duration-700" />
                 </div>
             </div>
         </div>
+
     </div>
 </section>
-
-</div>

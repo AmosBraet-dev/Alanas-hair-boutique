@@ -1,20 +1,25 @@
-<header id="main-header" class="w-full bg-brand-rose-solid sticky top-0 z-50 transition-colors duration-500">
+<header id="main-header" class="w-full bg-brand-rose-solid sticky top-0 z-40 transition-colors duration-500">
     
-    <div class="max-w-8xl mx-auto px-8 md:px-16 h-28 flex justify-between items-center relative border-b border-brand-bronze">
-        
-        <div class="relative w-56 h-28 flex-shrink-0 select-none flex items-start justify-center">
-            
-            <div class="absolute top-28 left-1/2 -translate-x-1/2 w-52 h-26 overflow-hidden pointer-events-none">
-                <div id="logo-bg" class="absolute bottom-0 w-52 h-52 bg-brand-rose-solid rounded-full border border-brand-bronze transition-colors duration-500"></div>
-            </div>
+    <div id="header-inner" class="max-w-8xl mx-auto px-8 md:px-16 h-28 flex justify-between items-center relative z-50 border-b border-brand-bronze transition-colors duration-750">        
+        <div id="logo-wrap-desktop" class="hidden lg:relative lg:w-56 lg:h-28 lg:flex-shrink-0 select-none lg:flex items-start justify-center transition-transform duration-500 ease-out origin-top-left">
+    
+    <div class="absolute top-28 left-1/2 -translate-x-1/2 w-52 h-26 overflow-hidden pointer-events-none">
+        <div id="logo-bg" class="transform-gpu [backface-visibility:hidden] absolute bottom-0 w-52 h-52 bg-brand-rose-solid rounded-full border border-brand-bronze transition-all duration-500"></div>
+    </div>
 
-            <div id="logo-top" class="absolute -top-3 left-1/2 -translate-x-1/2 w-52 h-31 bg-brand-rose-solid rounded-t-full pointer-events-none transition-colors duration-500"></div>
-            
-            <a href="/" class="absolute  left-1/2 -translate-x-1/2 flex items-center justify-center w-52 h-52 z-10 transition-transform duration-300 hover:scale-[1.02]" aria-label="Alana's Hair Boutique Home">
-                <img src="/images/logo-alana.png" alt="Alana's Hair Boutique Logo" width="400" height="300" loading="eager" fetchpriority="high" decoding="async" class="w-40 h-auto object-contain block -ml-3.5" />
-            </a>
-        </div>
-        
+    <div id="logo-top" class="absolute -top-3 left-1/2 -translate-x-1/2 w-52 h-31 bg-brand-rose-solid rounded-t-full pointer-events-none transition-all duration-500"></div>
+    
+    <a href="/" class="absolute left-1/2 -translate-x-1/2 flex items-center justify-center w-52 h-52 z-10 transition-transform duration-300 hover:scale-[1.02]" aria-label="Alana's Hair Boutique Home">
+        <img src="/images/logo-alana.png" alt="Alana's Hair Boutique Logo" width="400" height="300" loading="eager" fetchpriority="high" decoding="async" class="w-40 h-auto object-contain block -ml-3.5" />
+    </a>
+</div>
+
+<div id="logo-wrap-mobile" class="lg:hidden flex-shrink-0 select-none flex items-center transition-all duration-700 ease-out will-change-transform">
+    <a id="logo-circle-mobile" href="/" class="flex items-center justify-center w-22 h-22 rounded-full bg-brand-rose-solid border border-brand-bronze overflow-hidden transition-transform duration-300 active:scale-95" aria-label="Alana's Hair Boutique Home">
+        <img src="/images/logo-alana.png" alt="Alana's Hair Boutique Logo" width="300" height="300" loading="eager" fetchpriority="high" decoding="async" class="w-16 h-auto mb-1 mr-1 object-contain block" />
+    </a>
+</div>
+        <!-- Desktop nav — ongewijzigd -->
         <nav class="hidden lg:flex ml-16 space-x-18 text-sm font-semibold uppercase tracking-[0.3em] items-center">
             <a href="/" class="group relative py-2 text-brand-bronze/60 no-underline hover:text-brand-bronze transition-colors">
                 Home
@@ -25,7 +30,7 @@
                 <span class="absolute bottom-0 left-1/2 w-0 h-px bg-brand-bronze transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
             </a>
             <a href="/gallery" class="group relative py-2 text-brand-bronze/60 no-underline hover:text-brand-bronze transition-colors">
-                Gallerij
+                Galerij
                 <span class="absolute bottom-0 left-1/2 w-0 h-px bg-brand-bronze transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
             </a>
             <a href="/nak" class="group relative py-2 text-brand-bronze/60 no-underline hover:text-brand-bronze transition-colors">
@@ -42,14 +47,133 @@
             </a>
         </nav>
 
-        <div class="flex items-center">
-            <a href="https://alanashairboutique.setmore.com/" target="_blank" rel="noopener noreferrer" class="custom-fill-btn relative px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] border-2 border-brand-bronze/60 text-brand-bronze no-underline inline-block overflow-hidden transition-all duration-300">
+        <div class="flex items-center gap-2 md:gap-0">
+            <a id="btn-book"  href="https://alanashairboutique.setmore.com/" target="_blank" rel="noopener noreferrer" class="custom-fill-btn relative px-5 md:px-10 py-3 md:py-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.25em] border-2 border-brand-bronze/60 text-brand-bronze no-underline inline-block overflow-hidden transition-all duration-500">
                 <span class="btn-bg"></span>
                 <span class="btn-text">Boek Nu</span>
-                
             </a>
-            
+
+            <!-- Hamburger — enkel mobile/tablet -->
+            <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu openen"
+                class="lg:hidden relative z-[60] w-11 h-11 flex-shrink-0 flex items-center justify-center">
+                <span class="sr-only">Menu</span>
+                <div class="flex flex-col gap-[5px] w-5">
+                    <span id="bar-1" class="block h-[1.5px] w-full bg-brand-bronze transition-all duration-300 origin-center"></span>
+                    <span id="bar-2" class="block h-[1.5px] w-full bg-brand-bronze transition-all duration-300"></span>
+                    <span id="bar-3" class="block h-[1.5px] w-full bg-brand-bronze transition-all duration-300 origin-center"></span>
+                </div>
+            </button>
         </div>
 
     </div>
+
+    <!-- Mobile full-screen circle-reveal menu -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 z-40 pointer-events-none">
+        <div id="menu-circle" class="absolute inset-0 bg-brand-rose-solid" style="clip-path: circle(0px at calc(100% - 44px) 56px); transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1);"></div>
+
+        <div id="menu-deco-1" class="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-brand-bronze/25 opacity-0 transition-opacity duration-500 delay-200"></div>
+        <div id="menu-deco-2" class="absolute bottom-[-4rem] -left-12 w-56 h-56 rounded-full border border-brand-bronze/20 opacity-0 transition-opacity duration-500 delay-300"></div>
+        <div id="menu-deco-3" class="absolute top-1/3 -left-24 w-40 h-40 rounded-full border border-brand-bronze/15 opacity-0 transition-opacity duration-500 delay-[400ms]"></div>
+
+        <nav id="menu-links" class="relative h-full flex flex-col items-center justify-center gap-7">
+            <a href="/" class="mobile-nav-link opacity-0 transition-all duration-500 ease-out translate-y-4 text-brand-bronze no-underline text-lg font-semibold uppercase tracking-[0.25em]">Home</a>
+            <a href="/services" class="mobile-nav-link opacity-0 transition-all duration-500 ease-out translate-y-4 text-brand-bronze no-underline text-lg font-semibold uppercase tracking-[0.25em]">Diensten</a>
+            <a href="/gallery" class="mobile-nav-link opacity-0 transition-all duration-500 ease-out translate-y-4 text-brand-bronze no-underline text-lg font-semibold uppercase tracking-[0.25em]">Galerij</a>
+            <a href="/nak" class="mobile-nav-link opacity-0 transition-all duration-500 ease-out translate-y-4 text-brand-bronze no-underline text-lg font-semibold uppercase tracking-[0.25em]">NAK</a>
+            <a href="/about" class="mobile-nav-link opacity-0 transition-all duration-500 ease-out translate-y-4 text-brand-bronze no-underline text-lg font-semibold uppercase tracking-[0.25em]">Over mij</a>
+            <a href="/contact" class="mobile-nav-link opacity-0 transition-all duration-500 ease-out translate-y-4 text-brand-bronze no-underline text-lg font-semibold uppercase tracking-[0.25em]">Contact</a>
+        </nav>
+    </div>
 </header>
+
+<script>
+(function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const circle = document.getElementById('menu-circle');
+    const links = document.getElementById('menu-links');
+    const decos = [document.getElementById('menu-deco-1'), document.getElementById('menu-deco-2'), document.getElementById('menu-deco-3')];
+    const bar1 = document.getElementById('bar-1');
+    const bar2 = document.getElementById('bar-2');
+    const bar3 = document.getElementById('bar-3');
+    const logoWrapMobile = document.getElementById('logo-wrap-mobile');
+    const logoCircleMobile = document.getElementById('logo-circle-mobile');
+    const headerInner = document.getElementById('header-inner');
+    const btnBook = document.getElementById('btn-book');
+
+    let open = false;
+
+    function setOpen(next) {
+        open = next;
+        toggle.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('overflow-hidden', open);
+
+        headerInner.style.borderBottomColor = open ? 'transparent' : ''; 
+        btnBook.style.display = open ? 'none' : ''; 
+
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (open) {
+            menu.classList.remove('pointer-events-none');
+            const radius = Math.hypot(window.innerWidth, window.innerHeight) + 40;
+            circle.style.clipPath = `circle(${radius}px at calc(100% - 44px) 56px)`;
+            
+            navLinks.forEach((link, index) => {
+                setTimeout(() => {
+                    link.classList.remove('opacity-0', 'translate-y-4');
+                }, 300 + (index * 75));
+            });
+            
+            decos.forEach(d => d.classList.remove('opacity-0'));
+        } else {
+            circle.style.clipPath = 'circle(0px at calc(100% - 44px) 56px)';
+            
+            navLinks.forEach(link => {
+                link.classList.add('opacity-0', 'translate-y-4');
+            });
+            
+            decos.forEach(d => d.classList.add('opacity-0'));
+            setTimeout(() => { if (!open) menu.classList.add('pointer-events-none'); }, 600);
+        }
+
+        // Mobile logo: beweegt naar het midden van het scherm, vergroot, en lost op
+        if (open) {
+            const rect = logoWrapMobile.getBoundingClientRect();
+            const elCenterX = rect.left + rect.width / 2;
+            const elCenterY = rect.top + rect.height / 2;
+            const viewportCenterX = window.innerWidth / 2;
+            const viewportCenterY = window.innerHeight / 2;
+            const dx = viewportCenterX - elCenterX;
+            const dy = viewportCenterY - elCenterY;
+
+            logoWrapMobile.style.transform = open ? 'translate(40px, 60px) scale(3)' : '';
+            logoCircleMobile.style.backgroundColor = open ? 'transparent' : '';
+            logoCircleMobile.style.borderColor = open ? 'transparent' : '';
+        } else {
+            logoWrapMobile.style.transform = '';
+            logoWrapMobile.style.opacity = '1';
+            logoCircleMobile.style.backgroundColor = '';
+            logoCircleMobile.style.borderColor = '';
+            
+        }
+
+        // Hamburger
+        bar1.style.transform = open ? 'translateY(6.5px) rotate(45deg)' : '';
+        bar2.style.opacity = open ? '0' : '1';
+        bar3.style.transform = open ? 'translateY(-6.5px) rotate(-45deg)' : '';
+    }
+
+    toggle.addEventListener('click', () => setOpen(!open));
+
+    menu.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => setOpen(false));
+    });
+
+    window.addEventListener('resize', () => {
+        if (open) {
+            const radius = Math.hypot(window.innerWidth, window.innerHeight) + 40;
+            circle.style.clipPath = `circle(${radius}px at calc(100% - 44px) 56px)`;
+        }
+    });
+})();
+</script>
