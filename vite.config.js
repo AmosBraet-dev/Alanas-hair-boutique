@@ -24,6 +24,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         nak: resolve(__dirname, 'nak.html'),
         appointment: resolve(__dirname, 'appointment.html'),
+        gallery: resolve(__dirname, 'gallery.html'),
         redirect: resolve(__dirname, 'redirect.html'),
       },
     },
