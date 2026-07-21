@@ -118,9 +118,6 @@ textarea:-webkit-autofill:focus {
 
 /* Styling die PAS actief wordt als de menubalk vastplakt aan je header */
 #sticky-services-nav.is-pinned {
-    backdrop-filter: blur(12px); /* Luxe matglas effect */
-    -webkit-backdrop-filter: blur(12px); /* Safari support */
-    z-index: 30; /* Schiet omhoog over de prijzen heen */
     border-bottom: 1px solid rgba(197, 168, 128, 0.15); /* Subtiele bronskleurige border */
     padding-top: 1.25rem; /* Net iets meer ademruimte tijdens het scrollen */
     padding-bottom: 1.25rem;

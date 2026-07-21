@@ -265,26 +265,22 @@ document.addEventListener('DOMContentLoaded', () => {
 const stickyNav = document.querySelector('#sticky-services-nav');
 
 if (stickyNav) {
-    // We checken of het element op zijn plek zit door een rootMargin te gebruiken 
-    // die nét 1px strakker staat dan de CSS top-[100px]
     const stickyObserver = new IntersectionObserver(
         ([entry]) => {
-            // Als de balk NIET volledig kruist met de top-marge, betekent dit dat hij vastzit (is-pinned)
             if (entry.intersectionRatio < 1) {
-                stickyNav.classList.add('is-pinned');
+                stickyNav.classList.add('is-pinned', 'bg-brand-cream/85', 'backdrop-blur-md', 'shadow-sm');
             } else {
-                stickyNav.classList.remove('is-pinned');
+                stickyNav.classList.remove('is-pinned', 'bg-brand-cream/85', 'backdrop-blur-md', 'shadow-sm');
             }
         },
         { 
             threshold: [1],
-            rootMargin: '-101px 0px 0px 0px' // Verander 101px naar jouw headerhoogte + 1px
+            rootMargin: '-101px 0px 0px 0px' 
         }
     );
 
     stickyObserver.observe(stickyNav);
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     // Zoek alle CTA secties
     document.querySelectorAll('.cta-section').forEach(section => {
