@@ -167,3 +167,14 @@ textarea:-webkit-autofill:focus {
         width: 40px !important; 
     }
 }
+
+#logo-circle-mobile {
+    --logo-size-closed: 4rem;
+    transition: width 0.5s, height 0.5s;
+}
+@media (min-width: 640px) {
+    #logo-circle-mobile { --logo-size-closed: 5.5rem; }
+}
+#logo-circle-mobile.is-open img {
+    width: 68% !important; /* schaalt automatisch mee met de cirkel */
+}

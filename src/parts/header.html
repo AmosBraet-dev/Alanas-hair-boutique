@@ -14,9 +14,9 @@
     </a>
 </div>
 
-<div id="logo-wrap-mobile" class="lg:hidden flex-shrink-0 select-none flex items-center transition-all duration-700 ease-out will-change-transform">
-    <a id="logo-circle-mobile" href="./index.html" class="flex items-center justify-center w-22 h-22 rounded-full bg-brand-rose-solid border border-brand-bronze overflow-hidden transition-transform duration-300 active:scale-95" aria-label="Alana's Hair Boutique Home">
-        <img src="/images/logo-alana.png" alt="Alana's Hair Boutique Logo" width="300" height="300" loading="eager" fetchpriority="high" decoding="async" class="w-16 h-auto mb-1 mr-1 object-contain block" />
+<div id="logo-wrap-mobile" class="lg:hidden flex-shrink-0 pt-[1.5rem] select-none flex items-center self-start transition-all duration-700 ease-out will-change-transform">
+    <a id="logo-circle-mobile" href="./index.html" class="flex items-center justify-center w-16 h-16 sm:w-22 sm:h-22 rounded-full bg-brand-rose-solid border border-brand-bronze overflow-hidden transition-transform duration-300 active:scale-95" aria-label="Alana's Hair Boutique Home">
+        <img src="/images/logo-alana.png" alt="Alana's Hair Boutique Logo" width="300" height="300" loading="eager" fetchpriority="high" decoding="async" class="w-11 sm:w-16 h-auto mb-1 mr-1 object-contain block" />
     </a>
 </div>
         <!-- Desktop nav — ongewijzigd -->
@@ -136,26 +136,27 @@
             setTimeout(() => { if (!open) menu.classList.add('pointer-events-none'); }, 600);
         }
 
-        // Mobile logo: beweegt naar het midden van het scherm, vergroot, en lost op
-        if (open) {
-            const rect = logoWrapMobile.getBoundingClientRect();
-            const elCenterX = rect.left + rect.width / 2;
-            const elCenterY = rect.top + rect.height / 2;
-            const viewportCenterX = window.innerWidth / 2;
-            const viewportCenterY = window.innerHeight / 2;
-            const dx = viewportCenterX - elCenterX;
-            const dy = viewportCenterY - elCenterY;
+if (open) {
+    // Hoe langwerpiger het scherm (hoogte t.o.v. breedte), hoe groter het logo
+    const ratio = window.innerHeight / window.innerWidth;
+    const targetDiameter = window.innerWidth * 0.25 * ratio;
+    const clampedDiameter = Math.min(Math.max(targetDiameter, 130), 260);
 
-            logoWrapMobile.style.transform = open ? 'translate(40px, 60px) scale(3)' : '';
-            logoCircleMobile.style.backgroundColor = open ? 'transparent' : '';
-            logoCircleMobile.style.borderColor = open ? 'transparent' : '';
-        } else {
-            logoWrapMobile.style.transform = '';
-            logoWrapMobile.style.opacity = '1';
-            logoCircleMobile.style.backgroundColor = '';
-            logoCircleMobile.style.borderColor = '';
-            
-        }
+    logoCircleMobile.style.width = `${clampedDiameter}px`;
+    logoCircleMobile.style.height = `${clampedDiameter}px`;
+    logoCircleMobile.classList.add('is-open');
+    logoWrapMobile.classList.remove('pt-[1.5rem]');
+    logoCircleMobile.style.backgroundColor = 'transparent';
+    logoCircleMobile.style.borderColor = 'transparent';
+} else {
+    logoCircleMobile.style.width = '';
+    logoCircleMobile.style.height = '';
+    logoCircleMobile.classList.remove('is-open');
+    logoWrapMobile.classList.add('pt-[1.5rem]');
+    logoWrapMobile.style.opacity = '1';
+    logoCircleMobile.style.backgroundColor = '';
+    logoCircleMobile.style.borderColor = '';
+}
 
         // Hamburger
         bar1.style.transform = open ? 'translateY(6.5px) rotate(45deg)' : '';
