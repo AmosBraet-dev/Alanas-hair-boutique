@@ -124,6 +124,7 @@ textarea:-webkit-autofill:focus {
     border-bottom: 1px solid rgba(197, 168, 128, 0.15); /* Subtiele bronskleurige border */
     padding-top: 1.25rem; /* Net iets meer ademruimte tijdens het scrollen */
     padding-bottom: 1.25rem;
+    background-color: rgba(247, 244, 239, 0.2);
 }
 
 
