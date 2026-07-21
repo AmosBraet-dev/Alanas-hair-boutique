@@ -268,9 +268,9 @@ if (stickyNav) {
     const stickyObserver = new IntersectionObserver(
         ([entry]) => {
             if (entry.intersectionRatio < 1) {
-                stickyNav.classList.add('is-pinned', 'bg-brand-cream/85', 'backdrop-blur-md', 'shadow-sm');
+                stickyNav.classList.add('is-pinned', 'bg-brand-cream/85', 'backdrop-blur-md', 'shadow-xs');
             } else {
-                stickyNav.classList.remove('is-pinned', 'bg-brand-cream/85', 'backdrop-blur-md', 'shadow-sm');
+                stickyNav.classList.remove('is-pinned', 'bg-brand-cream/85', 'backdrop-blur-md', 'shadow-xs');
             }
         },
         { 
