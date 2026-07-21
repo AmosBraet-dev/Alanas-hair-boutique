@@ -52,34 +52,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const currentPath = window.location.pathname;
+  const checkNav = setInterval(() => {
+    const links = document.querySelectorAll('nav a');
+    if (links.length === 0) return;
+    
+    clearInterval(checkNav);
+    
+    const currentPath = window.location.pathname.replace(/\/$/, ''); // Haal eventuele trailing slash weg
 
-  document.querySelectorAll('nav a').forEach(link => {
-    const linkPath = link.getAttribute('href');
-    const underline = link.querySelector('span'); // Kan null zijn
+    links.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      const underline = link.querySelector('span');
 
-    if (currentPath === linkPath || (currentPath === '/' && linkPath === '/index.html')) {
-      link.classList.remove('text-brand-bronze/60');
-      link.classList.add('text-brand-bronze');
-      
-      // Controleer of underline bestaat voordat je classList gebruikt
-      if (underline) {
-        underline.classList.remove('w-0', 'group-hover:w-full');
-        underline.classList.add('w-full');
+      // Schoon de linkPath op (haal .html en ./ weg voor de vergelijking)
+      const cleanLinkPath = linkPath.replace(/^\.\//, '').replace(/\.html$/, '');
+      const cleanCurrentPath = currentPath.replace(/\.html$/, '');
+
+      // Check of we op home zijn
+      const isCurrentPageHome = cleanCurrentPath === '' || cleanCurrentPath.endsWith('/Alanas-hair-boutique') || cleanCurrentPath.endsWith('/index');
+      const isLinkHome = cleanLinkPath === '' || cleanLinkPath === '/' || cleanLinkPath === 'index';
+
+      // Match check
+      const isMatch = (isCurrentPageHome && isLinkHome) || (!isLinkHome && cleanCurrentPath.endsWith('/' + cleanLinkPath));
+
+      if (isMatch) {
+        link.classList.remove('text-brand-bronze/60');
+        link.classList.add('text-brand-bronze');
+        
+        if (underline) {
+          underline.classList.remove('w-0', 'group-hover:w-full');
+          underline.classList.add('w-full');
+        }
+      } else {
+        link.classList.remove('text-brand-bronze');
+        link.classList.add('text-brand-bronze/60');
+        
+        if (underline) {
+          underline.classList.remove('w-full');
+          underline.classList.add('w-0', 'group-hover:w-full');
+        }
       }
-    } else {
-      link.classList.remove('text-brand-bronze');
-      link.classList.add('text-brand-bronze/60');
-      
-      // Controleer of underline bestaat voordat je classList gebruikt
-      if (underline) {
-        underline.classList.remove('w-full');
-        underline.classList.add('w-0', 'group-hover:w-full');
-      }
-    }
-  });
+    });
+  }, 50);
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {

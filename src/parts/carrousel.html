@@ -7,11 +7,11 @@
             trackHeight: 440,
             gap: 40,
             slides: [
-                { src: 'main-salon.jpg', ratio: '16/9', caption: 'Hoofdsalon' },
-                { src: 'gallery-pic-3.jpg', ratio: '16/9', caption: 'Detail' },
-                { src: 'gallery-pic-4.jpg', ratio: '16/9', caption: 'NAK producten' },
-                { src: 'gallery-pic-5.jpg', ratio: '9/16', caption: 'Inkom' },
-                { src: 'gallery-pic-7.jpg', ratio: '9/16', caption: 'Wastafel' }
+                { src: 'images/main-salon.jpg', ratio: '16/9', caption: 'Hoofdsalon' },
+                { src: 'images/gallery-pic-3.jpg', ratio: '16/9', caption: 'Detail' },
+                { src: 'images/gallery-pic-4.jpg', ratio: '16/9', caption: 'NAK producten' },
+                { src: 'images/gallery-pic-5.jpg', ratio: '9/16', caption: 'Inkom' },
+                { src: 'images/gallery-pic-7.jpg', ratio: '9/16', caption: 'Wastafel' }
             ],
             slideWidth(ratio) {
                 const [w, h] = ratio.split('/').map(Number);
@@ -82,7 +82,7 @@
                          @mousemove="activeSlide === index && trackHover($event, $el)"
                          @mouseleave="hoverX = 0; hoverY = 0">
 
-                        <img :src="`/images/${slide.src}`"
+                        <img :src="`/Alanas-hair-boutique/${slide.src}`"
                              loading="lazy" decoding="async"
                              class="w-full h-full object-cover transition-transform duration-[6000ms] ease-out"
                              :class="activeSlide === index ? 'scale-[1.08]' : 'scale-100'"
