@@ -1,3 +1,9 @@
+document.fonts.ready.then(() => {
+  document.querySelectorAll('.editorial-fade').forEach(el => {
+    void el.offsetHeight; // forceert reflow/repaint
+  });
+});
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const hasAlpineBindings = document.querySelector('[x-data], [x-show], [x-bind], [x-for]') !== null;
 
