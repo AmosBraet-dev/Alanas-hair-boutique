@@ -7,7 +7,9 @@
              trackHeight: 440,
              gap: 40,
              touchStartX: 0,
+             touchStartY: 0,
              touchEndX: 0,
+             touchEndY: 0,
              isOpen: false,
              slides: [
                  { src: 'images/main-salon.jpg', ratio: '16/9', caption: 'Hoofdsalon' },
@@ -45,28 +47,35 @@
              },
              handleTouchStart(e) {
                  this.touchStartX = e.touches[0].clientX;
+                 this.touchStartY = e.touches[0].clientY;
              },
              handleTouchMove(e) {
                  this.touchEndX = e.touches[0].clientX;
+                 this.touchEndY = e.touches[0].clientY;
              },
              handleTouchEnd() {
-                 const threshold = 50;
-                 const diff = this.touchStartX - this.touchEndX;
+                 const xDiff = this.touchStartX - this.touchEndX;
+                 const yDiff = this.touchStartY - this.touchEndY;
 
-                 if (Math.abs(diff) > threshold) {
-                     if (diff > 0) {
-                         this.setActive(Math.min(this.slides.length - 1, this.activeSlide + 1));
-                     } else {
-                         this.setActive(Math.max(0, this.activeSlide - 1));
+                 // Alleen triggeren als er meer horizontaal dan verticaal is geswipet (voorkomt conflict met pagina scrollen)
+                 if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                     const threshold = 40; // Gevoeligheid voor mobiel
+                     if (Math.abs(xDiff) > threshold) {
+                         if (xDiff > 0) {
+                             this.setActive(Math.min(this.slides.length - 1, this.activeSlide + 1));
+                         } else {
+                             this.setActive(Math.max(0, this.activeSlide - 1));
+                         }
                      }
                  }
+                 // Reset
+                 this.touchStartX = 0;
+                 this.touchEndX = 0;
              },
              openLightbox(index) {
                  if (this.activeSlide === index) {
                      this.isOpen = true;
                      document.body.style.overflow = 'hidden';
-                     
-                     // Verberg de header (pas 'header' eventueel aan naar jouw class of id, bijv. '.site-header')
                      const header = document.querySelector('header');
                      if (header) header.style.display = 'none';
                  } else {
@@ -76,8 +85,6 @@
              closeLightbox() {
                  this.isOpen = false;
                  document.body.style.overflow = '';
-                 
-                 // Toon de header weer
                  const header = document.querySelector('header');
                  if (header) header.style.display = '';
              }
@@ -101,12 +108,13 @@
             </div>
         </div>
 
-        <div class="relative h-[440px] overflow-hidden touch-pan-y" 
+        <!-- Viewport met touch handlers -->
+        <div class="relative h-[440px] overflow-hidden" 
              x-ref="viewport"
              @touchstart="handleTouchStart($event)"
              @touchmove="handleTouchMove($event)"
              @touchend="handleTouchEnd()">
-            <div class="flex items-center h-full"
+            <div class="flex items-center h-full cursor-pointer"
                  :style="`gap: ${gap}px; transform: translateX(${offset}px); transition: transform 900ms cubic-bezier(0.16,1,0.3,1)`"
                  x-ref="track">
 
