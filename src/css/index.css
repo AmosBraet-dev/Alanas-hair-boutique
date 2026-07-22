@@ -15,6 +15,21 @@
   --color-brand-dark: #2b1f1a;
 }
 
+.font-serif {
+    font-family: 'Pinyon Script', cursive;
+    font-display: swap;
+}
+
+.font-sans {
+    font-family: 'Quicksand', sans-serif;
+    font-display: swap;
+}
+
+.font-nunito {
+    font-family: 'Nunito', sans-serif;
+    font-display: swap;
+}
+
 /* 1. Verberg de standaard cursor op de hele website */
 html, body, a, button {
   cursor: none !important;
