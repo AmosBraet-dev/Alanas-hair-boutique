@@ -1,9 +1,3 @@
-document.fonts.ready.then(() => {
-  document.querySelectorAll('.editorial-fade').forEach(el => {
-    void el.offsetHeight; // forceert reflow/repaint
-  });
-});
-
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const hasAlpineBindings = document.querySelector('[x-data], [x-show], [x-bind], [x-for]') !== null;
 
@@ -114,6 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 // Voeg de zichtbaarheidsklasse toe
                 entry.target.classList.add('is-visible');
+                document.fonts.ready.then(() => {
+                    void entry.target.offsetHeight;
+                });
                 // Stop met observeren zodat de animatie maar één keer afspeelt (geeft rust)
                 observer.unobserve(entry.target);
             }

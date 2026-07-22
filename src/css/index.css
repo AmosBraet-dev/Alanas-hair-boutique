@@ -17,6 +17,8 @@
 .font-serif {
     font-family: 'Pinyon Script', cursive;
     font-display: swap;
+    line-height: 1.6;
+
 }
 
 .font-sans {
