@@ -1,5 +1,8 @@
 const initCustomCursor = () => {
 
+  const hasRealMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!hasRealMouse) return;
+
   const body = document.body;
   if (!body) return;
 
