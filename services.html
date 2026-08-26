@@ -6,12 +6,15 @@
     <title>Alana's Hair Boutique - Diensten & Tarieven</title>
     <link class="js-favicon" rel="icon" href="/images/favicon-alana.png" />
     <link rel="stylesheet" href="/src/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&family=Quicksand:wght@300..700&display=swap">
     <script type="module" src="/src/js/index.js"></script>
 </head>
 <body class="bg-brand-cream text-brand-dark font-sans m-0 relative">
 <load src="src/parts/header.html" />
 
-<section class="relative w-full pt-32 pb-16 lg:pt-44 overflow-hidden text-center">
+<section data-header-bg="bg-brand-rose-solid" class="relative w-full pt-32 pb-16 lg:pt-44 overflow-hidden text-center">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.1] select-none z-0 overflow-hidden">
         <img 
             src="/images/bg-flower.png" 
@@ -70,125 +73,130 @@
     </a>
     
 </div>
-<section class="relative w-full pb-32 px-4 sm:px-12 md:px-16 lg:px-24 pt-16">
+<section data-header-bg="bg-brand-rose-solid" class="relative w-full pb-32 px-4 sm:px-12 md:px-16 lg:px-24 pt-16">
     <div class="max-w-4xl mx-auto space-y-20 lg:space-y-28">
 
+        <!-- Brushing -->
         <div id="brushing" class="editorial-fade flex flex-col">
             <h2 class="text-center font-serif italic text-3xl text-brand-bronze tracking-wide mb-8">Brushing</h2>
             <div class="space-y-5">
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Brushing kort</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 25</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Brushing kort</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 25</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Brushing schouderlengte</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 30</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Brushing schouderlengte</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 30</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Brushing lang</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 35</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Brushing lang</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 35</span>
                 </div>
             </div>
         </div>
 
+        <!-- Snit -->
         <div id="snit" class="editorial-fade flex flex-col">
             <h2 class="text-center font-serif italic text-3xl text-brand-bronze tracking-wide mb-8">Snit</h2>
             <div class="space-y-5">
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Tondeusesnit</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 22</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Tondeusesnit</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 22</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Snit</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 32</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Snit</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 32</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Snit + brushing kort</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 57</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Snit + brushing kort</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 57</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Snit + brushing schouderlengte</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 62</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Snit + brushing schouderlengte</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 62</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Snit + brushing lang</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 67</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Snit + brushing lang</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 67</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Snit + drogen natuurlijke krul</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 55</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Snit + drogen natuurlijke krul</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 55</span>
                 </div>
             </div>
         </div>
 
+        <!-- Kleuring -->
         <div id="kleuring" class="editorial-fade flex flex-col">
             <h2 class="text-center font-serif italic text-3xl text-brand-bronze tracking-wide mb-8">Kleuring</h2>
             <div class="space-y-5">
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Kleuren uitgroei</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 50</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Kleuren uitgroei</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 50</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Extra kleur</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">+ € 5</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Extra kleur</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">+ € 5</span>
                 </div>
             </div>
         </div>
 
+        <!-- Balayage -->
         <div id="balayage" class="editorial-fade flex flex-col">
             <h2 class="text-center font-serif italic text-3xl text-brand-bronze tracking-wide mb-8">Balayage</h2>
             <div class="space-y-5">
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Balayage deel</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 50</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Balayage deel</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 50</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Balayage volledig</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 60</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Balayage volledig</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 60</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Balayage meerdere kleuren</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 70</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Balayage meerdere kleuren</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 70</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Foliage deel</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 70</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Foliage deel</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 70</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Foliage volledig</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 80</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Foliage volledig</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 80</span>
                 </div>
             </div>
         </div>
 
+        <!-- Extra's -->
         <div id="extras" class="editorial-fade flex flex-col">
             <h2 class="text-center font-serif italic text-3xl text-brand-bronze tracking-wide mb-8">Extra's</h2>
             <div class="space-y-5">
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Toner</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium"><span class="text-xs uppercase tracking-wider text-brand-dark/40 font-sans not-italic mr-1">Vanaf</span> € 25</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Toner</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 w-24 sm:w-32 text-right flex items-center justify-end"><span class="text-[10px] sm:text-xs uppercase tracking-wider text-brand-dark/40 font-sans not-italic mr-1">Vanaf</span> € 25</span>
                 </div>
-                <div class="flex items-end justify-between group">
-                    <span class="text-sm sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300">Opsteken</span>
-                    <div class="grow mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5"></div>
-                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium">€ 45</span>
+                <div class="flex items-end justify-between group min-w-0">
+                    <span class="text-xs sm:text-base font-light tracking-wide uppercase text-brand-dark/90 group-hover:text-brand-bronze transition-colors duration-300 truncate pr-2">Opsteken</span>
+                    <div class="grow mx-2 sm:mx-4 border-b border-dotted border-brand-bronze/30 mb-1.5 min-w-[20px]"></div>
+                    <span class="font-serif italic text-base sm:text-lg text-brand-dark font-medium shrink-0 min-w-12 sm:min-w-16 text-right overflow-visible pr-1">€ 45</span>
                 </div>
             </div>
         </div>
@@ -202,7 +210,6 @@
                 <li>Bent u verhinderd? Gelieve ons minstens 24 uur op voorhand te verwittigen.</li>
             </ul>
         </div>
-
         
     </div>
 </section>

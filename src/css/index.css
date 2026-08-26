@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -13,6 +12,23 @@
   --color-brand-rose-solid: #f5ece9;
   --color-brand-bronze: #996e4b;
   --color-brand-dark: #2b1f1a;
+}
+
+.font-serif {
+    font-family: 'Pinyon Script', cursive;
+    font-display: swap;
+    line-height: 1.6;
+
+}
+
+.font-sans {
+    font-family: 'Quicksand', sans-serif;
+    font-display: swap;
+}
+
+.font-nunito {
+    font-family: 'Nunito', sans-serif;
+    font-display: swap;
 }
 
 /* 1. Verberg de standaard cursor op de hele website */
