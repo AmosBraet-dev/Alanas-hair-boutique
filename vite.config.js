@@ -27,6 +27,7 @@ export default defineConfig({
         gallery: resolve(__dirname, 'gallery.html'),
         redirect: resolve(__dirname, 'redirect.html'),
         privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
+        termsOfService: resolve(__dirname, 'terms-of-service.html'),
       },
     },
   },
