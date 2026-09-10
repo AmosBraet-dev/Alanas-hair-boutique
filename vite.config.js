@@ -26,6 +26,7 @@ export default defineConfig({
         appointment: resolve(__dirname, 'appointment.html'),
         gallery: resolve(__dirname, 'gallery.html'),
         redirect: resolve(__dirname, 'redirect.html'),
+        privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
       },
     },
   },
