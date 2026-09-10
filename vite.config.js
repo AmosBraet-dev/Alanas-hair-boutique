@@ -7,7 +7,7 @@ import injectHTML from 'vite-plugin-html-inject';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  base: '/Alanas-hair-boutique/', 
+  base: './', 
   plugins: [
     tailwindcss(),
     injectHTML(),
