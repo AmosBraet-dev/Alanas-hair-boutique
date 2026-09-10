@@ -41,12 +41,38 @@
                     </a>
                 </div>
                 
-                <div class="pt-2 text-center md:text-left">
-                    <span class="text-xs min-[2000px]:text-xl font-semibold uppercase tracking-wider text-brand-dark/90 block mb-1">Beschikbaarheid:</span>
-                    <p class="text-xs min-[2000px]:text-lg text-brand-dark/70 tracking-wide leading-relaxed">
-                        Maandag & Dinsdag<br />
-                        <span class="font-sans italic font-normal text-brand-bronze text-xs min-[2000px]:text-2xl mt-0.5 block">Enkel op afspraak</span>
-                    </p>
+                <div class="pt-2 w-full max-w-[220px] mx-auto md:mx-0">
+                    <span class="text-xs min-[2000px]:text-xl font-semibold uppercase tracking-wider text-brand-dark/90 block mb-3 text-center md:text-left">Beschikbaarheid:</span>
+
+                    <!-- Urenrooster: pas per dag zelf de uren aan, of vul "Gesloten" in -->
+                    <table class="w-full text-xs min-[2000px]:text-lg border-collapse">
+                        <tbody>
+                            <tr class="border-b border-brand-bronze/10">
+                                <td class="py-1.5 pr-3 text-brand-dark/70 tracking-wide">Dinsdag</td>
+                                <td class="py-1.5 text-right text-brand-bronze font-light italic">09:00 – 18:00</td>
+                            </tr>
+                            <tr class="border-b border-brand-bronze/10">
+                                <td class="py-1.5 pr-3 text-brand-dark/70 tracking-wide">Woensdag</td>
+                                <td class="py-1.5 text-right text-brand-bronze font-light italic">09:00 – 18:00</td>
+                            </tr>
+                            <tr class="border-b border-brand-bronze/10">
+                                <td class="py-1.5 pr-3 text-brand-dark/70 tracking-wide">Donderdag</td>
+                                <td class="py-1.5 text-right text-brand-bronze font-light italic">09:00 – 20:00</td>
+                            </tr>
+                            <tr class="border-b border-brand-bronze/10">
+                                <td class="py-1.5 pr-3 text-brand-dark/70 tracking-wide">Vrijdag</td>
+                                <td class="py-1.5 text-right text-brand-bronze font-light italic">09:00 – 18:00</td>
+                            </tr>
+                            <tr class="border-b border-brand-bronze/10">
+                                <td class="py-1.5 pr-3 text-brand-dark/70 tracking-wide">Zaterdag</td>
+                                <td class="py-1.5 text-right text-brand-bronze font-light italic">08:30 – 16:00</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1.5 pr-3 text-brand-dark/40 tracking-wide">Zon- & maandag</td>
+                                <td class="py-1.5 text-right text-brand-dark/40 font-light italic">Gesloten</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -82,6 +108,13 @@
                             <span class="absolute bottom-0 left-1/2 w-0 h-px bg-brand-bronze transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
                         </a>
                     </li>
+
+                    <li>
+                        <a href="/privacy-policy.html" class="group relative py-1 text-brand-dark/60 hover:text-brand-bronze no-underline transition-colors duration-300 block">
+                            Privacybeleid
+                            <span class="absolute bottom-0 left-1/2 w-0 h-px bg-brand-bronze transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>
@@ -94,6 +127,11 @@
             <div>
                 <span>Btw BE1024.904.770</span>
             </div>
+
+            <div class="flex items-center gap-2 order-last md:order-none">
+                <a href="/privacy-policy.html" class="text-brand-dark/50 hover:text-brand-bronze no-underline transition-colors duration-300">Privacybeleid</a>
+            </div>
+
             <div class="text-center md:text-right font-light">
                 &copy; 2026 Alana's Hair Boutique. Alle rechten voorbehouden.
             </div>
