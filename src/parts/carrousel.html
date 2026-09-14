@@ -134,7 +134,7 @@
                          @mousemove="activeSlide === index && trackHover($event, $el)"
                          @mouseleave="hoverX = 0; hoverY = 0">
 
-                        <img :src="`/Alanas-hair-boutique/${slide.src}`"
+                        <img :src="slide.src"
                              loading="lazy" decoding="async"
                              class="w-full h-full object-cover transition-transform duration-[6000ms] ease-out pointer-events-none"
                              :class="activeSlide === index ? 'scale-[1.08]' : 'scale-100'"
@@ -202,7 +202,7 @@
 
             <!-- Container voor afbeelding & onderschrift -->
             <div class="relative max-w-7xl max-h-[90vh] flex flex-col items-center justify-center" @click.stop>
-                <img :src="`/Alanas-hair-boutique/${slides[activeSlide]?.src}`" 
+                <img :src="slides[activeSlide]?.src" 
                      :alt="slides[activeSlide]?.caption"
                      class="max-w-full max-h-[80vh] object-contain rounded-sm shadow-2xl">
                 
