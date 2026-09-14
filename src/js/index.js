@@ -295,3 +295,18 @@ document.addEventListener("DOMContentLoaded", () => {
         titleEl.innerHTML = customText;
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const backButtons = document.querySelectorAll('.js-back-btn');
+    
+    backButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '/';
+            }
+        });
+    });
+});
